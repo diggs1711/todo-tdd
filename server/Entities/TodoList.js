@@ -6,6 +6,10 @@ class TodoList {
     add(item) {
         this.items.push(item)
     }
+
+    remove({ itemId }) {
+        this.items = this.items.filter(item => item.id != itemId)
+    }
 }
 
 module.exports = TodoList

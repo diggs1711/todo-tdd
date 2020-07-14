@@ -1,7 +1,9 @@
 class TodoItem {
-    constructor({ name, description }) {
+    constructor({ id, name, description }) {
         this.name = name
+        this.id = id
         this.description = description
+        this.status = null
     }
 
     setDescription(desc) {
@@ -10,6 +12,10 @@ class TodoItem {
 
     setName(name) {
         this.name = name
+    }
+
+    setStatus({ status }) {
+        this.status = status
     }
 }
 

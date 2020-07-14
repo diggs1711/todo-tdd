@@ -7,6 +7,7 @@ describe("todo item", () => {
 
     beforeEach(() => {
         todoItem = new TodoItem({
+            id: 1,
             name: "Item 1",
             description: "example description"
         })
@@ -14,6 +15,7 @@ describe("todo item", () => {
 
     it("init todo item with name", () => {
         expect(todoItem.name).toBe("Item 1")
+        expect(todoItem.id).toBe(1)
     })
 
     it("init todo item with description", () => {
@@ -28,5 +30,12 @@ describe("todo item", () => {
     it("updates title of item", () => {
         todoItem.setName("New Item Name")
         expect(todoItem.name).toBe("New Item Name")
+    })
+
+    it("updates status to complete", () => {
+        todoItem.setStatus({
+            status: 'Complete'
+        })
+        expect(todoItem.status).toBe('Complete')
     })
 })
