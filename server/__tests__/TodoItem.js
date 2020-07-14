@@ -1,6 +1,6 @@
 const {
     TodoItem
-} = require('../Entities')
+} = require('../entities')
 
 describe("todo item", () => {
     let todoItem;
@@ -23,12 +23,16 @@ describe("todo item", () => {
     })
 
     it("updates description of item", () => {
-        todoItem.setDescription("updated description")
+        todoItem.setDescription({
+            desc: "updated description"
+        })
         expect(todoItem.description).toBe("updated description")
     })
 
     it("updates title of item", () => {
-        todoItem.setName("New Item Name")
+        todoItem.setName({
+            name: "New Item Name"
+        })
         expect(todoItem.name).toBe("New Item Name")
     })
 

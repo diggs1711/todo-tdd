@@ -1,8 +1,13 @@
-const { TodoList, TodoItem } = require('../Entities')
+const {
+    TodoList,
+    TodoItem
+} = require('../entities')
 
 describe("Todo List", () => {
     it("init empty list", () => {
-        const todoList = new TodoList({ items: [] })
+        const todoList = new TodoList({
+            items: []
+        })
         expect(todoList.items.length).toBe(0)
     })
 
@@ -17,7 +22,9 @@ describe("Todo List", () => {
             items: []
         })
 
-        todoList.add(todoItem)
+        todoList.add({
+            item: todoItem
+        })
 
         expect(todoList.items.length).toBe(1)
         expect(todoList.items[0].name).toBe("Item 1")
@@ -26,7 +33,9 @@ describe("Todo List", () => {
     })
 
     it("removes an item from the list", () => {
-        const todoList = new TodoList({ items: [] })
+        const todoList = new TodoList({
+            items: []
+        })
         expect(todoList.items.length).toBe(0)
 
         const todoListItem = new TodoItem({
@@ -35,7 +44,9 @@ describe("Todo List", () => {
             description: "Item description"
         })
 
-        todoList.add(todoListItem)
+        todoList.add({
+            item: todoListItem
+        })
 
         todoList.remove({
             itemId: 1
@@ -45,7 +56,9 @@ describe("Todo List", () => {
     })
 
     it("makes item as complete", () => {
-        const todoList = new TodoList({ items: [] })
+        const todoList = new TodoList({
+            items: []
+        })
         const todoListItem = new TodoItem({
             id: 1,
             name: "Item 1",

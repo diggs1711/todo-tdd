@@ -1,13 +1,19 @@
 class TodoList {
-    constructor({ items }) {
+    constructor({
+        items
+    }) {
         this.items = items
     }
 
-    add(item) {
+    add({
+        item
+    }) {
         this.items.push(item)
     }
 
-    remove({ itemId }) {
+    remove({
+        itemId
+    }) {
         this.items = this.items.filter(item => item.id != itemId)
     }
 }
